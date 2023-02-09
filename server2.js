@@ -42,6 +42,7 @@ app.get('/test', async (req, res) =>{
 // 1. This Method will return top 10 topics based on the provided INDUSTRY
 app.post('/api/generateTopicsBasedOnIndustry', async (req, res)=>{
   try {
+      console.log('OpenAI configuration', configuration)
       const industry = req.body.industry;
       console.log('industry', industry);
       const query = `Give top 10 topics related to ${industry} in json format`; 
