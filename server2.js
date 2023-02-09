@@ -1,22 +1,15 @@
 
 import express from 'express';
 import morgan from 'morgan';
-
 import * as dotenv from 'dotenv';
-import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 import sstk from 'shutterstock-api'
 dotenv.config();
-
 
 const app = express()
 
 app.use(morgan(":method :url :status :res[content-length] - :response-time ms"))
 app.use(express.json());
-
-// app.get("/test", (req, res) => {
-//   res.send("<h1>It's working from server 2 🤗</h1>")
-// })
 
 //#region OpenAI ChatGpt API
 const configuration = new Configuration({
@@ -178,6 +171,5 @@ app.post('/api/getImagesFromShutterstocks', async (req, res)=>{
 
 //#endregion
 
-
-const port = 8080
-app.listen(port, () => console.log(`Listening on port ${port}`))
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`Server is running on port ${port}`));
