@@ -165,5 +165,5 @@ app.post('/api/getImagesFromShutterstocks', async (req, res)=>{
 })
 
 //#endregion
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8080;
 app.listen(process.env.port, ()=> console.log(`Server is running on port # http://localhost:${port}`));
