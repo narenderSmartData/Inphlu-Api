@@ -13,8 +13,8 @@ app.use(express.json());
 
 //#region OpenAI ChatGpt API
 const configuration = new Configuration({
+  organization: process.env.OPENAI_API_ORGID,
   apiKey: process.env.OPENAI_API_KEY,
-  // organization: "org-rljhcAIEA3MrbJrIQymc0gjq"
 })
 
 const openai = new OpenAIApi(configuration);
