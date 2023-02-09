@@ -1,6 +1,6 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
-import cors from 'cors';
+// import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 import sstk from 'shutterstock-api'
 dotenv.config();
@@ -14,7 +14,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const app = express();
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 app.get('/test', async (req, res) =>{
