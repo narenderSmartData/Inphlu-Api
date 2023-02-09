@@ -14,9 +14,9 @@ const app = express()
 app.use(morgan(":method :url :status :res[content-length] - :response-time ms"))
 app.use(express.json());
 
-app.get("/test", (req, res) => {
-  res.send("<h1>It's working from server 2 🤗</h1>")
-})
+// app.get("/test", (req, res) => {
+//   res.send("<h1>It's working from server 2 🤗</h1>")
+// })
 
 //#region OpenAI ChatGpt API
 const configuration = new Configuration({
