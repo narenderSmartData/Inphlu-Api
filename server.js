@@ -17,7 +17,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', async (req, res) =>{
+app.get('/test', async (req, res) =>{
     res.status(200).send({
         message: `Use specific api routes to get the data  
         1.api/generateTopicsBasedOnIndustry 
