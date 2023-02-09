@@ -20,8 +20,7 @@ app.use(express.json());
 
 //#region OpenAI ChatGpt API
 const configuration = new Configuration({
-  // apiKey: process.env.OPENAI_API_KEY,
-  apiKey: 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,
+  apiKey: process.env.OPENAI_API_KEY,
 })
 
 const openai = new OpenAIApi(configuration);
