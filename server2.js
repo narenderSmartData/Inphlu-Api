@@ -138,5 +138,46 @@ const  GenerateContentFromOpenAI = async (query) =>{
 
 //#endregion
 
+//#region Shuttuerstocks API
+sstk.setAccessToken(process.env.SHUTTERSTOCK_API_TOKEN);
+const imagesApi = new sstk.ImagesApi();
+
+// 1. This Method will return images from Shutterstocks
+app.post('/api/getImagesFromShutterstocks', async (req, res)=>{
+   let images =[];
+    try {
+        const keywords = req.body.keywords;     
+        console.log('keywords', keywords);  
+        const queryParams = {
+            "query": keywords,
+            "image_type": "photo",
+            "page": 1,
+            "per_page": 5,
+            "view": "minimal",
+            "sort": "relevance",
+            "orientation": "horizontal",
+          };
+          
+          imagesApi.searchImages(queryParams)
+            .then((data) => {
+                data.data.forEach(image=>{
+                images.push(image.assets.preview.url)
+                })
+                res.status(200).send(images);
+            })
+            .catch((error) => {
+              console.error(error);
+              res.status(500).send({error});
+            });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({error});
+    }
+})
+
+//#endregion
+
+
 const port = 8080
 app.listen(port, () => console.log(`Listening on port ${port}`))
