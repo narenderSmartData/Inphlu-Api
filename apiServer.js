@@ -154,7 +154,7 @@ app.post('/api/getImagesFromShutterstocks', async (req, res)=>{
           imagesApi.searchImages(queryParams)
             .then((data) => {
                 data.data.forEach(image=>{
-                images.push(image.assets.preview.url)
+                images.push(image.assets.preview_1500.url)
                 })
                 res.status(200).send(images);
             })
