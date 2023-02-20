@@ -1,0 +1,37 @@
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+    "username":"Sindhuri",
+    "password":"SDS4inphlu@123"
+}
+
+
+###
+POST http://localhost:8080/api/generateTopicsBasedOnIndustry
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2luZGh1cmkiLCJpYXQiOjE2NzY4NjMzNDYsImV4cCI6MTY3Njg2MzM2MX0.HfHTJMHlI2goVVlc9FwpT1Id6d1l7uJ-wrJgILoItm0
+
+{
+    "industry":"Computers"
+}
+
+###
+POST http://localhost:8080/api/token
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NzYyOTUyMjd9.kVUUXCMPInaLOppJljeNXFTNYraJQSbbt9_bFKV0gJQ"
+}
+
+###
+
+POST http://localhost:8080/api/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2NzYyOTUyMjd9.kVUUXCMPInaLOppJljeNXFTNYraJQSbbt9_bFKV0gJQ"
+}
+
+# jimohan
+# bharathdumbala
